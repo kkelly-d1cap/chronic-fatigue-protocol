@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { NewsletterCTA } from '@/components/home/NewsletterCTA';
@@ -55,10 +56,26 @@ export default function MyStoryPage() {
               variants={staggerChildren}
               className="space-y-8"
             >
+              {/* Photo */}
+              <motion.div variants={fadeInUp} className="flex justify-center">
+                <div className="relative w-full max-w-md">
+                  <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl border-4 border-white ring-2 ring-primary-200">
+                    <Image
+                      src="/kk-photo-tiedye.jpg"
+                      alt="Katie in tie dye - looking healthy despite living with chronic fatigue"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 500px"
+                      priority
+                    />
+                  </div>
+                </div>
+              </motion.div>
+
               <motion.div variants={fadeInUp} className="bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl p-8">
                 <p className="text-xl text-neutral-700 leading-relaxed">
-                  Hi Everyone! I&apos;m Katie, don&apos;t let the sunshine and tie dye fool you. What
-                  those photos don&apos;t show is the constant daily struggle with Chronic Fatigue &
+                  Hi Everyone! I&apos;m Katie, don&apos;t let this picture fool you. I know things look quite peachy in the sun and tie dye. What
+                  this picture doesn&apos;t show is the constant daily struggle with Chronic Fatigue &
                   Autonomic Nervous System Dysfunction. If you have landed here you can probably
                   relate to the common phrase,{' '}
                   <strong className="text-primary-600">&quot;Well you don&apos;t look sick&quot;</strong>.
