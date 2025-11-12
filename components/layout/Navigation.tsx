@@ -22,6 +22,8 @@ export function Navigation() {
 
   const navLinks = [
     { href: '/', label: 'Home' },
+    { href: '/start-here', label: 'Start Here' },
+    { href: '/my-story', label: 'My Story' },
     { href: '/protocol', label: 'Protocol' },
     { href: '/blog', label: 'Blog' },
     { href: '/resources', label: 'Resources' },
