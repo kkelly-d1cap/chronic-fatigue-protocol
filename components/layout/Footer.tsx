@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { BatteryLogo } from '@/components/icons/BatteryLogo';
+import { Instagram, Twitter, Youtube } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -16,6 +17,24 @@ export function Footer() {
     { label: 'Privacy', href: '/privacy' },
     { label: 'Terms', href: '/terms' },
     { label: 'Disclaimer', href: '/disclaimer' },
+  ];
+
+  const socialLinks = [
+    {
+      label: 'Instagram',
+      href: 'https://instagram.com/chronicfatigueprotocol',
+      icon: Instagram
+    },
+    {
+      label: 'Twitter',
+      href: 'https://twitter.com/cfprotocol',
+      icon: Twitter
+    },
+    {
+      label: 'YouTube',
+      href: 'https://youtube.com/@chronicfatigueprotocol',
+      icon: Youtube
+    },
   ];
 
   return (
@@ -45,6 +64,27 @@ export function Footer() {
               {link.label}
             </Link>
           ))}
+        </div>
+
+        {/* Social Media Icons */}
+        <div className="flex justify-center gap-4 mb-6">
+          {socialLinks.map((social) => {
+            const Icon = social.icon;
+            return (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-600 to-accent-500
+                           flex items-center justify-center text-white
+                           hover:scale-110 hover:shadow-lg transition-all duration-300"
+              >
+                <Icon className="w-5 h-5" />
+              </a>
+            );
+          })}
         </div>
 
         {/* Legal Links */}
